@@ -1,0 +1,95 @@
+.layout  {
+    height: 100vh;
+    width: 100vw;
+    background-color: #152A38;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.main-title {
+    color: #D1D4C9;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+    letter-spacing: 12px;
+}
+
+.secondary-title {
+    color: #D1D4C9;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    letter-spacing: 3px;
+    max-width: 900px;
+}
+
+.option-button {
+    background-color: #D1D4C9;
+    color: #152A38;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.option-button:hover {
+    background-color: #152A38 !important;
+    color: #D1D4C9 !important;
+}
+
+.score-title {
+    color: #D1D4C9;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.modal-container {
+    display: flex ;
+    flex-direction: column ;
+    align-items: center  ;
+    gap: 20px;
+}
+
+.modal-container p {
+    font-size: 17px;
+}
+
+.ant-modal-content {
+    background-color: #152A38 !important;
+    color: #D1D4C9 !important;
+}
+
+.ant-modal-title {
+    background-color: #152A38 !important;
+    color: #D1D4C9 !important;
+}
+
+.modal-return-btn {
+    background-color: #D1D4C9;
+    color: #152A38;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+    height: 35px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-return-btn:hover {
+    background-color: #152A38 !important;
+    color: #D1D4C9 !important;
+}
