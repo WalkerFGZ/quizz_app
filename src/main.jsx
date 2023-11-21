@@ -1,6 +1,6 @@
 import './index.css'
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 import Category from './Routes/Category/index.jsx'
 import Error404 from './Routes/Error/Error404.jsx'
@@ -8,7 +8,7 @@ import Questions from './Routes/Questions/index.jsx'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Category />,
