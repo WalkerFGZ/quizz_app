@@ -93,3 +93,26 @@
     background-color: #152A38 !important;
     color: #D1D4C9 !important;
 }
+
+.return-home {
+    width: 100%;
+    padding: 27px;
+}
+
+.return-home-btn {
+    background-color: #D1D4C9;
+    color: #152A38;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.return-home-btn:hover {
+    background-color: #152A38 !important;
+    color: #D1D4C9 !important;
+}

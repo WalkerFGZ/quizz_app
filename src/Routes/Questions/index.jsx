@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Content } from "antd/es/layout/layout";
+import he from "he";
 
 const Category = () => {
   const params = useParams();
@@ -15,7 +16,7 @@ const Category = () => {
   const [listOfAnswers, setListOfAnswers] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-const [questionsCompleted, setQuestionsCompleted] = useState(false);
+  const [questionsCompleted, setQuestionsCompleted] = useState(false);
 
   const { category } = params;
   let categoryValue = 0;
@@ -27,6 +28,8 @@ const [questionsCompleted, setQuestionsCompleted] = useState(false);
     categoryValue = 23;
   } else if (category === "video_games") {
     categoryValue = 15;
+  }else  {
+    navigate("/404");
   }
 
   useEffect(() => {
@@ -64,8 +67,8 @@ const [questionsCompleted, setQuestionsCompleted] = useState(false);
     }
 
     if (questionIndex === 9) {
-        setQuestionsCompleted(true);
-        return;
+      setQuestionsCompleted(true);
+      return;
     }
     const nextIncorrectAnswer = questions[questionIndex + 1].incorrect_answers;
     const nextCorrectAnswer = questions[questionIndex + 1].correct_answer;
@@ -77,6 +80,10 @@ const [questionsCompleted, setQuestionsCompleted] = useState(false);
     setListOfAnswers(answers);
   };
 
+  const returnToHome = () => {
+    navigate("/");
+  }
+
   return (
     <ConfigProvider
       theme={{
@@ -87,6 +94,11 @@ const [questionsCompleted, setQuestionsCompleted] = useState(false);
     >
       {contextHolder}
       <Layout className="layout">
+        <Space className="return-home">
+          <Button className="return-home-btn" onClick={() => returnToHome()}>
+            Return
+          </Button>
+        </Space>
         <Space>
           <h2 className="score-title">Score: {score} / 10</h2>
         </Space>
@@ -98,7 +110,7 @@ const [questionsCompleted, setQuestionsCompleted] = useState(false);
           }}
         >
           <div>
-            <h2 className="secondary-title">{currentQuestion?.question}</h2>
+            <h2 className="secondary-title">{he?.decode(currentQuestion?.question || '')}</h2>
             <Button
               block
               className="option-button"
@@ -142,10 +154,7 @@ const [questionsCompleted, setQuestionsCompleted] = useState(false);
       >
         <div className="modal-container">
           <p>You scored {score} points. Thanks for playing!</p>
-          <Button
-            onClick={() => navigate("/")}
-            className="modal-return-btn"
-          >
+          <Button onClick={() => navigate("/")} className="modal-return-btn">
             Play Again
           </Button>
         </div>
